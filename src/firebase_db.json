@@ -1,0 +1,36 @@
+{
+  "Hi_Mobile": {
+    "Bill": {
+      "2023": {
+        "-NQGMJ5dHR1u3lu07P5j": {
+          "BillNo": 0,
+          "CompletePayment": false,
+          "Date": "2023/3/11",
+          "Date_Month": 3,
+          "Id": "-NQGMJ5dHR1u3lu07P5j",
+          "Items": {
+            "-NQGMJ5iWrdQ-5CNqWoY": {
+              "Cost": 0,
+              "Id": "-NQGMJ5iWrdQ-5CNqWoY",
+              "IdItem": "Coustom",
+              "Name": "1",
+              "Price": 200,
+              "Qty": 1,
+              "Warrenty": "1 Month"
+            }
+          },
+          "Mobile": "1",
+          "Name": "1",
+          "Payment": 0,
+          "Total": 200
+        }
+      }
+    },
+    "User": {
+      "Email": "admin",
+      "Mobile": "01111",
+      "Name": "Shop Name",
+      "Password": "123"
+    }
+  }
+}
