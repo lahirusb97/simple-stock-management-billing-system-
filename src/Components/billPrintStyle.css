@@ -1,0 +1,107 @@
+@media print {
+  .print-dialog {
+    width: 105mm;
+    height: 146.5mm;
+    /* border: 1px solid black; */
+  }
+
+  body * {
+    visibility: hidden;
+
+    padding: 0;
+    margin: 0;
+  }
+  .print-dialog,
+  .print-dialog * {
+    visibility: visible;
+    margin: 0;
+    padding: 0;
+  }
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .no-print {
+    display: none;
+  }
+  .parent {
+    width: 105mm;
+    height: 146.5mm;
+    border: 1px solid black;
+    margin: -5mm;
+  }
+  .detailBox {
+    margin: 0 auto;
+    width: 100mm;
+    height: 30mm;
+  }
+  .billtable {
+    width: 90mm;
+    height: 70mm;
+    margin: 2mm;
+  }
+  .bdata {
+    margin-left: 2mm;
+  }
+  .tableprae {
+    border: 1px solid black;
+  }
+  .parentz {
+    width: 100mm;
+
+    display: grid;
+    grid-template-columns: 10mm 10mm 1fr 20mm 20mm;
+    /* grid-template-rows: repeat(5, 40px); */
+  }
+  .bframe {
+    border-top: 1px solid black;
+    /* border-bottom: 1px solid black; */
+    border-left: 1px solid black;
+  }
+  .bframe:last-child {
+    border-right: 1px solid black;
+  }
+  .bframe:nth-child(1) {
+    /* border: 1px solid black; */
+  }
+}
+
+.bframe {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+.bframe:nth-child(1) {
+  border-left: none;
+}
+/* .billtable {
+  width: 480px;
+  height: 300px;
+} */
+
+.parentz {
+  display: grid;
+  grid-template-columns: 10mm 10mm 1fr 20mm 20mm;
+}
+.no {
+  grid-column: 1/2;
+
+  padding: 5px;
+}
+.qty {
+  grid-column: 2/3;
+
+  padding: 5px;
+}
+.description {
+  padding: 5px;
+  grid-column: 3/4;
+}
+.warrenty {
+  padding: 5px;
+  grid-column: 4/5;
+}
+.price {
+  grid-column: 5/6;
+  padding: 5px;
+}
