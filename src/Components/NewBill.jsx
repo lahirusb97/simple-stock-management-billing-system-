@@ -259,7 +259,7 @@ export default function NewBill() {
           <h1 className=" text-center font-bold text-4xl">Your Shop</h1>
           <div className="flex justify-center">
             <CallIcon />
-            <p className=" mx-2 text-center">000-1234567</p>
+            <p className=" mx-2 text-center">01234567890</p>
           </div>
           <div className="flex justify-between">
             <h3>

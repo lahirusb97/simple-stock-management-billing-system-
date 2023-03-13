@@ -20,7 +20,7 @@ import DatePickerCom from "./DatePickerCom";
 import { openBillModel } from "../Store/billopenSlice";
 import { useSelector, useDispatch } from "react-redux";
 import ModalBill from "./ModalBill";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   getDatabase,
   ref,
@@ -39,6 +39,7 @@ import {
 } from "../Store/billmodaleopenSlice";
 import { TextField } from "@mui/material";
 import { openEditModel } from "../Store/itemEditSlice";
+import useWindowDimensions from "./useWindowDimensions";
 export default function Billing() {
   const [checked, setChecked] = useState(false);
   const [selected, setselected] = useState(false);
@@ -52,11 +53,12 @@ export default function Billing() {
   const endDate = useSelector((state) => state.date.enddate);
   const openEdit = useSelector((state) => state.billEdit.billEdit);
   const openupdate = useSelector((state) => state.billEdit.billEdit);
-
+  const divRef = useRef(null);
   const [datez, setDatez] = useState(new Date());
   const [uncomp, setUncomp] = useState("");
   const [data, setdata] = useState([]);
   const [selectItem, setSelectItem] = useState();
+  const [heightz, setHeight] = useState(0);
   useEffect(() => {
     const db = getDatabase();
 
@@ -107,37 +109,34 @@ export default function Billing() {
         console.error(error);
       });
   }, [startDate["sd"], openEdit]);
+  const { height, width } = useWindowDimensions();
 
+  useEffect(() => {
+    setHeight(divRef.current.clientHeight);
+  }, []);
   return (
     <div>
-      {/* <button
-        onClick={() => {
-          dispatch(openBillModel());
-        }}
-        className=" px-6 py-4 my-4 bg-green-600 text-white"
-      >
-        New Bill
-      </button> */}
-
-      <DatePickerCom />
-      <div className="flex flex-col items-start">
-        <TextField
-          label="Search"
-          placeholder="Enter Bill Number"
-          onChange={(e) => {
-            setUncomp(e.target.value);
-          }}
-        />
-        <label>
-          InComplete Payments
-          <Switch checked={checked} onChange={handleChange} />
-        </label>
+      <div ref={divRef}>
+        <DatePickerCom />
+        <div className="flex flex-col items-start">
+          <TextField
+            label="Search"
+            placeholder="Enter Bill Number"
+            onChange={(e) => {
+              setUncomp(e.target.value);
+            }}
+          />
+          <label>
+            InComplete Payments
+            <Switch checked={checked} onChange={handleChange} />
+          </label>
+        </div>
       </div>
       <ChakraProvider>
         <Box>
-          <Heading>Billing</Heading>
+          <Box overflowY="auto" maxHeight={`${height - heightz}`}>
+            <Heading>Billing</Heading>
 
-          <Box overflowY="auto" maxHeight="300px">
             <Table variant="striped">
               <Thead position="sticky" top={0} bgColor="black">
                 <Tr>
@@ -170,16 +169,14 @@ export default function Billing() {
                     >
                       <Td>{item["BillNo"]}</Td>
                       <Td>{item["Name"]}</Td>
-                      <Td>{`${datez.getFullYear()}/${item["Date_Month"]}/${
-                        item["Date_Day"]
-                      }`}</Td>
+                      <Td>{item["Date"]}</Td>
                       <Td>{item["Mobile"]}</Td>
                       <Td>
                         {Object.values(item["Items"]).map((e, i) => (
                           <span key={"xz" + i}>{e["Name"]}/</span>
                         ))}
                       </Td>
-                      <Td>20000</Td>
+                      <Td>{item["Total"]}</Td>
                     </Tr>
                   ))}
               </Tbody>

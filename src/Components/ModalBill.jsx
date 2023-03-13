@@ -45,10 +45,10 @@ export default function ModalBill() {
         <DialogContent>
           <div className=" w-full">
             <div className=" border-4 border-black p-4">
-              <h1 className=" text-center font-bold text-4xl">HI Mobile</h1>
+              <h1 className=" text-center font-bold text-4xl">Your Shop</h1>
               <div className="flex justify-center">
                 <CallIcon />
-                <p className=" mx-2 text-center">071-9990599</p>
+                <p className=" mx-2 text-center">01234567890</p>
               </div>
               <div className="flex justify-between">
                 <h3>

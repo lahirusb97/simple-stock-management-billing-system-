@@ -53,10 +53,10 @@ export default function BillPrint() {
         <DialogContent>
           <div className="border-1 border-black parent print-dialog">
             <div className=" p-2 my-2 detailBox border border-black">
-              <h1 className=" text-center font-bold text-lg">Your Shop</h1>
+              <h1 className=" text-center font-bold text-lg">Hi Mobile</h1>
               <div className="flex justify-center items-center contact">
                 <CallIcon sx={{ fontSize: "20px" }} />
-                <p className=" mx-2 text-center">000-1234567</p>
+                <p className=" mx-2 text-center">01234567890</p>
               </div>
               <div className="flex justify-between">
                 <h3>Bill NO:{billBasicInfo["BillNo"]}</h3>

@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "mysamples-cbad4",
-    "y": "mysamples-cbad4"
+    "y": "mysamples-cbad4",
+    "default": "mysamples-cbad4"
   },
   "targets": {},
   "etags": {}

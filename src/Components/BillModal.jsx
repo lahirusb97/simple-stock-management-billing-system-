@@ -52,6 +52,7 @@ export default function BillModal(props) {
             duration: 2000,
             isClosable: true,
           });
+          setPaymentIn(0);
         })
         .catch((error) => {
           toast({
@@ -61,10 +62,11 @@ export default function BillModal(props) {
             duration: 2000,
             isClosable: true,
           });
+          setPaymentIn(0);
         });
     }
   };
-  console.log(open ? props.billData.Payment : "");
+
   const editpayment = (ez) => {
     const payment = parseInt(ez.target.value);
     setPaymentIn(parseInt(ez.target.value || 0));
@@ -122,7 +124,7 @@ export default function BillModal(props) {
               >
                 <h3 className=" text-2xl font-semibold">Items</h3>
                 {Object.values(props.billData.Items).map((e, i) => (
-                  <div className="flex mb-2">
+                  <div className="flex mb-2" key={"d" + i}>
                     <h3 className=" pr-2 font-black text-xl">{i + 1}</h3>
 
                     <h4 className=" text-green-700 text-xl"> {e.Name}</h4>

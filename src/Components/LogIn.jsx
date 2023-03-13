@@ -39,16 +39,17 @@ export default function LogIn() {
   };
   return (
     <div className=" w-full h-screen flex flex-col md:flex-row">
-      <div className=" md:w-1/2 bg-slate-500 flex justify-center items-center">
-        <img src="./Images/logo.jpg" />
+      <div className=" md:w-1/2  flex justify-center items-center">
+        <img src="./Images/shop.jpg" />
       </div>
       <div className=" md:w-1/2 flex justify-center items-center">
         <div className=" md:w-1/2 md:p-4">
-          <h1 className=" text-5xl font-bold">Hi Mobile</h1>
-          <p>Hi Mobile Stock System</p>
+          <h1 className=" text-5xl font-bold">Your Shop</h1>
+          <p>Your Shop Stock System</p>
 
           <TextField
             className=" w-full"
+            sx={{ marginTop: "1rem" }}
             label="Email"
             type={"text"}
             variant="outlined"
@@ -56,6 +57,7 @@ export default function LogIn() {
           />
           <TextField
             className=" w-full"
+            sx={{ marginTop: "1rem" }}
             label="Password"
             type="password"
             variant="outlined"
